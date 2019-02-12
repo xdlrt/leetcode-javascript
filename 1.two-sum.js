@@ -30,13 +30,13 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  var hash = {};
+  var hashMap = {};
   for (var i = 0; i < nums.length; i++) {
     var num = nums[i];
-    if (hash[num] !== undefined) {
-      return [hash[num], i]
+    if (hashMap[num] !== undefined) {
+      return [hashMap[num], i]
     } else {
-      hash[target - num] = i;
+      hashMap[target - num] = i;
     }
   }
   return [];
