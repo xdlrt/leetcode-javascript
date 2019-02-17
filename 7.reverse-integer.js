@@ -56,9 +56,9 @@ var reverse1 = function (x) {
 // 官方题解
 var reverse = function (x) {
   let temp = x, rev = 0, max = Math.pow(2, 31) - 1, min = - Math.pow(2, 31);
-  while (parseInt(temp, 10) != 0) {
+  while (parseInt(temp, 10) !== 0) {
     let pop = parseInt(temp % 10, 10);
-    temp /= 10;
+    temp = parseInt(temp / 10, 10);
     if (rev > max / 10 || (rev == parseInt(max / 10, 10) && pop > 7)) return 0;
     if (rev < min / 10 || (rev == parseInt(min / 10, 10) && pop < -8)) return 0;
     rev = rev * 10 + pop;
